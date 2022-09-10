@@ -240,6 +240,7 @@ export type Query = {
   comments: Array<Comment>;
   follower: Array<Post>;
   like: Array<Post>;
+  loginUser: User;
   popular: Array<Post>;
   post: Post;
   posts: Array<Post>;
@@ -454,6 +455,11 @@ export type GetUserQueryVariables = Exact<{
 
 
 export type GetUserQuery = { __typename?: 'Query', user: { __typename?: 'User', id: string, createdAt: any, username: string, follow?: Array<string> | null, followed?: Array<string> | null, loginStatus: boolean, profile?: { __typename?: 'Profile', id: string, favorite?: Array<string> | null, twitterId?: string | null, youtubeId?: string | null, tiktokId?: string | null, instagramId?: string | null, facebookId?: string | null, img?: string | null } | null, posts?: Array<{ __typename?: 'Post', id: string, createdAt: any, authorRole: Role, authorName: string, startTime: any, title: string, episode?: number | null, category: Category, content?: string | null, participant?: Array<string> | null, like?: Array<string> | null, public: boolean, url?: string | null }> | null } };
+
+export type LoginUserQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LoginUserQuery = { __typename?: 'Query', loginUser: { __typename?: 'User', id: string, createdAt: any, username: string, follow?: Array<string> | null, followed?: Array<string> | null, loginStatus: boolean, profile?: { __typename?: 'Profile', id: string, favorite?: Array<string> | null, twitterId?: string | null, youtubeId?: string | null, tiktokId?: string | null, instagramId?: string | null, facebookId?: string | null, img?: string | null } | null, posts?: Array<{ __typename?: 'Post', id: string, createdAt: any, authorRole: Role, authorName: string, startTime: any, title: string, episode?: number | null, category: Category, content?: string | null, participant?: Array<string> | null, like?: Array<string> | null, public: boolean, url?: string | null }> | null } };
 
 export type GetUserByNameQueryVariables = Exact<{
   username: Scalars['String'];
@@ -1174,6 +1180,57 @@ export const useGetUserQuery = <
     useQuery<GetUserQuery, TError, TData>(
       ['GetUser', variables],
       fetcher<GetUserQuery, GetUserQueryVariables>(client, GetUserDocument, variables, headers),
+      options
+    );
+export const LoginUserDocument = `
+    query LoginUser {
+  loginUser {
+    id
+    createdAt
+    username
+    follow
+    followed
+    loginStatus
+    profile {
+      id
+      favorite
+      twitterId
+      youtubeId
+      tiktokId
+      instagramId
+      facebookId
+      img
+    }
+    posts {
+      id
+      createdAt
+      authorRole
+      authorName
+      startTime
+      title
+      episode
+      category
+      content
+      participant
+      like
+      public
+      url
+    }
+  }
+}
+    `;
+export const useLoginUserQuery = <
+      TData = LoginUserQuery,
+      TError = unknown
+    >(
+      client: GraphQLClient,
+      variables?: LoginUserQueryVariables,
+      options?: UseQueryOptions<LoginUserQuery, TError, TData>,
+      headers?: RequestInit['headers']
+    ) =>
+    useQuery<LoginUserQuery, TError, TData>(
+      variables === undefined ? ['LoginUser'] : ['LoginUser', variables],
+      fetcher<LoginUserQuery, LoginUserQueryVariables>(client, LoginUserDocument, variables, headers),
       options
     );
 export const GetUserByNameDocument = `

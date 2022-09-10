@@ -37,6 +37,43 @@ export const GET_USER = gql`
     }
   }
 `;
+export const LOGIN_USER = gql`
+  query LoginUser {
+    loginUser {
+      id
+      createdAt
+      username
+      follow
+      followed
+      loginStatus
+      profile {
+        id
+        favorite
+        twitterId
+        youtubeId
+        tiktokId
+        instagramId
+        facebookId
+        img
+      }
+      posts {
+        id
+        createdAt
+        authorRole
+        authorName
+        startTime
+        title
+        episode
+        category
+        content
+        participant
+        like
+        public
+        url
+      }
+    }
+  }
+`;
 
 export const GET_USER_BY_NAME = gql`
   query GetUserByName($username: String!) {
