@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { useLoginMutation, useLogoutMutation } from "../../generated/graphql";
 import { graphqlRequestClient } from "../../libs/graphqlRequestClient";
 
@@ -17,7 +18,8 @@ export const useMutateAuth = () => {
       console.log(data);
     },
     onError: (err) => {
-      console.log(err);
+      if (err.message.split(":")[0] === "Unauthorized")
+        toast.error("すでにログアウト済みです");
     },
     retry: false,
   });

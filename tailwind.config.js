@@ -29,6 +29,16 @@ module.exports = {
         "ct-purple": "#bd97cb",
         "ct-yellow": "#fbc741",
       },
+      animation: {
+        appear: "appear 0.5s ease-in-out",
+      },
+
+      keyframes: {
+        appear: {
+          "0%": { opacity: 0, transform: "translateY(-10px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+      },
     },
   },
   plugins: [],
