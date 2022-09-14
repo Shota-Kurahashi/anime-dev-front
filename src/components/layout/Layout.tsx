@@ -16,8 +16,8 @@ export const Layout: FC<Props> = ({ title = "Home", children }) => (
     </Head>
 
     <div className="relative z-0 flex h-full w-full  md:pl-20">
-      <main className=" relative h-full w-full overflow-y-auto pb-20 md:pb-0 lg:basis-2/3">
-        <div className="fixed top-0 h-16 w-full border-b bg-white/[0.9]  lg:absolute">
+      <main className="relative h-full w-full overflow-y-auto bg-gray-50 pb-20 md:pb-0 lg:basis-2/3">
+        <div className="fixed top-0 h-16 w-full border-b bg-white/[0.9] lg:absolute   lg:bg-gray-50">
           a
         </div>
         <div className="h-full w-full  pt-16">{children}</div>
