@@ -12,6 +12,12 @@ export const SIGH_UP = gql`
   mutation SighUp($authInput: AuthInput!) {
     sighUp(authInput: $authInput) {
       message
+      user {
+        id
+        profile {
+          id
+        }
+      }
     }
   }
 `;
@@ -20,6 +26,12 @@ export const LOGOUT = gql`
   mutation Logout {
     logout {
       message
+      user {
+        id
+        profile {
+          id
+        }
+      }
     }
   }
 `;

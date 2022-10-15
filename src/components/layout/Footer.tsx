@@ -17,7 +17,7 @@ export const Footer = () => (
         </button>
       </div>
       <div className="group relative basis-1/5 cursor-pointer md:basis-0">
-        <HomeIcon className="group mx-auto h-10 w-10 stroke-[0.5px] transition-all group-hover:scale-90" />
+        <HomeIcon className="group mx-auto h-10 w-10 stroke-[0.5px] transition-all group-active:scale-90" />
         <div className=" pointer-events-none absolute left-[150%] top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded bg-black p-2 text-xs text-white opacity-0 transition-all duration-500  before:absolute before:top-1/2 before:right-full before:-translate-y-1/2 before:border-[6px] before:border-transparent before:border-r-black before:content-[''] group-hover:-translate-x-[5%] group-hover:opacity-100 md:block">
           ホーム
         </div>
@@ -29,13 +29,13 @@ export const Footer = () => (
         </div>
       </div>
       <div className="group relative basis-1/5 cursor-pointer md:basis-0 ">
-        <BellIcon className="mx-auto h-10 w-10 stroke-[0.5px] transition-all group-hover:scale-90" />
+        <BellIcon className="mx-auto h-10 w-10 stroke-[0.5px] transition-all group-active:scale-90" />
         <div className="pointer-events-none absolute left-[150%] top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded bg-black p-2 text-xs text-white opacity-0 transition-all duration-500 before:absolute before:top-1/2  before:right-full before:-translate-y-1/2 before:border-[6px] before:border-transparent before:border-r-black before:content-[''] group-hover:-translate-x-[5%] group-hover:opacity-100 md:block">
           通知
         </div>
       </div>
       <div className="group relative basis-1/5 cursor-pointer md:order-[-1] md:basis-0">
-        <UserCircleIcon className="mx-auto h-10 w-10 text-gray-500 transition-all group-hover:scale-90" />
+        <UserCircleIcon className="mx-auto h-10 w-10 text-gray-500 transition-all group-active:scale-90" />
         <div className=" pointer-events-none absolute left-[150%] top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded bg-black p-2 text-xs text-white opacity-0 transition-all duration-500  before:absolute before:top-1/2 before:right-full before:-translate-y-1/2 before:border-[6px] before:border-transparent before:border-r-black before:content-[''] group-hover:-translate-x-[5%] group-hover:opacity-100 md:block">
           ログイン
         </div>

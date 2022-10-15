@@ -13,8 +13,8 @@ export const useQueryPopularPosts = () => {
     graphqlRequestClient,
     {},
     {
-      onError: (err) => {
-        toast.error(err.message);
+      onError: () => {
+        toast.error("エラーが発生しました");
       },
       retry: false,
       staleTime: Infinity,

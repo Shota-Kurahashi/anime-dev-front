@@ -3,10 +3,9 @@ import { useQueryPopularPosts } from "../../hooks/posts/useQueryPopularPosts";
 import { PostItem } from "./PostItem";
 
 export const Popular = () => {
-  const { data, isLoading, isError, error } = useQueryPopularPosts();
+  const { data, isLoading } = useQueryPopularPosts();
 
   if (isLoading) return <div>loading...</div>;
-  if (isError) return <div>{error?.message}</div>;
 
   return (
     <ul className="h-full w-full">
